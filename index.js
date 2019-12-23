@@ -1,47 +1,21 @@
 const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const Events = require('./routes/events')
+// const bodyParser = require('body-parser')
+// const cors = require('cors')
+const eventsRoute = require('./routes/events')
 
 const app = express()
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-// app.use(cors())
-
-
-app.use('/events',Events)
+// app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({ extended: true }))
 
 
 
-// const getBooks = (request, response) => {
-//   pool.query('SELECT * FROM EMS', (error, results) => {
-//     if (error) {
-//       throw error
-//     }
-//     response.status(200).json(results.rows)
-//   })
-// }
+app.use('/EventsRoute',eventsRoute)
 
-// // const addBook = (request, response) => {
-// //   const { author, title } = request.body
+app.all("*", (req, res) => {
+  res.status(404).send(`Please try giving "/" or "events/lig" or "price/35000" or "/pincode"`);
+});
 
-// //   pool.query('INSERT INTO books (author, title) VALUES ($1, $2)', [author, title], error => {
-// //     if (error) {
-// //       throw error
-// //     }
-// //     response.status(201).json({ status: 'success', message: 'Book added.' })
-// //   })
-// // }
-
-// app
-//   .route('/books')
-//   // GET endpoint
-//   .get(getBooks)
-//   // POST endpoint
-//   .post(addBook)
-
-// Start server
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Server listening`)
 })

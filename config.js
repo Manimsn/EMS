@@ -1,7 +1,4 @@
-require('dotenv').config()
-
 const { Pool } = require('pg')
-// const isProduction = process.env.NODE_ENV === 'production'
 
 const connectionString = `postgres://jhimbkjt:GMim55FtIgzcrGREVYlNT-qyhe5korkR@isilo.db.elephantsql.com:5432/jhimbkjt`
 
