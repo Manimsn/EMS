@@ -16,6 +16,6 @@ app.all("*", (req, res) => {
   res.status(404).send(`Please try giving "/" or "events/lig" or "price/35000" or "/pincode"`);
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(3000, () => {
   console.log(`Server listening`)
 })

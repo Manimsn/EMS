@@ -1,7 +1,6 @@
 const express = require('express');
 const Router = express.Router();
 const pool = require('../config');
-const Ajv = require('ajv');
 
 Router.get("/", (req, res) => {
     // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
